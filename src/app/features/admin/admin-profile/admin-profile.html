@@ -1,0 +1,232 @@
+<div class="admin-layout">
+
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <main class="main-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+
+      <h2>Profile</h2>
+
+      <div class="header-actions">
+        <i class="fa-regular fa-bell"></i>
+        <div class="small-avatar">AD</div>
+      </div>
+
+    </header>
+
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Profile Card -->
+      <section class="profile-card">
+
+        <div class="profile-info">
+
+          <div class="profile-avatar">
+            AD
+          </div>
+
+          <div>
+            <h2>Admin User</h2>
+
+            <p>@admin.dashboard</p>
+
+            <p>System Administrator</p>
+
+            <span>
+              Manage users, courses and platform activities.
+            </span>
+          </div>
+
+        </div>
+
+
+        <button
+          routerLink="/admin/setting"
+          (click)="editProfile()">
+
+          Edit Profile
+
+        </button>
+
+      </section>
+
+
+      <!-- Statistics -->
+      <section class="stats">
+
+        <div class="stat">
+          <strong>1,248</strong>
+          <span>Total Users</span>
+        </div>
+
+        <div class="stat">
+          <strong>36</strong>
+          <span>Total Courses</span>
+        </div>
+
+        <div class="stat">
+          <strong>84%</strong>
+          <span>Active Users</span>
+        </div>
+
+        <div class="stat">
+          <strong>12</strong>
+          <span>Pending Requests</span>
+        </div>
+
+      </section>
+
+
+      <!-- Admin Controls -->
+      <h2 class="title">
+        Admin Controls
+      </h2>
+
+
+      <section class="achievements">
+
+
+        <!-- ========================= -->
+        <!-- Manage Users -->
+        <!-- ========================= -->
+
+        <div class="achievement">
+
+          <div class="achievement-info">
+
+            <div class="achievement-icon users-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+              <h3>Manage Users</h3>
+
+              <p>
+                View and manage platform users.
+              </p>
+            </div>
+
+          </div>
+
+
+          <button
+            routerLink="/admin/student-management">
+
+            View
+
+          </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- Add Courses -->
+        <!-- ========================= -->
+
+        <div class="achievement">
+
+          <div class="achievement-info">
+
+            <div class="achievement-icon courses-icon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div>
+              <h3>Add Courses</h3>
+
+              <p>
+                Add new courses to the platform.
+              </p>
+            </div>
+
+          </div>
+
+
+          <button
+            routerLink="/admin/add-course">
+
+            View
+
+          </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- Delete Courses -->
+        <!-- ========================= -->
+
+        <div class="achievement">
+
+          <div class="achievement-info">
+
+            <div class="achievement-icon delete-icon">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+
+            <div>
+              <h3>Delete Courses</h3>
+
+              <p>
+                Remove courses from the platform.
+              </p>
+            </div>
+
+          </div>
+
+
+          <button
+            routerLink="/admin/delete-course">
+
+            View
+
+          </button>
+
+        </div>
+
+
+       
+        <!-- ========================= -->
+        <!-- Reports -->
+        <!-- ========================= -->
+
+        <div class="achievement">
+
+          <div class="achievement-info">
+
+            <div class="achievement-icon reports-icon">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <div>
+              <h3>Reports</h3>
+
+              <p>
+                View platform statistics and reports.
+              </p>
+            </div>
+
+          </div>
+
+
+          <button
+            routerLink="/admin/dashboard">
+
+            View
+
+          </button>
+
+        </div>
+
+
+      </section>
+
+    </div>
+
+  </main>
+
+</div>

@@ -1,0 +1,269 @@
+<div class="auth-shell">
+
+  <aside class="auth-panel">
+
+    <h1 class="auth-panel__title">
+      Learn. Build.
+      <span>Grow.</span>
+    </h1>
+
+    <p class="auth-panel__text">
+      Join thousands of learners and start building your
+      future with Devora.
+    </p>
+
+    <img
+      class="auth-panel__illustration"
+      src="assets/illustration.png"
+      alt="Learning illustration"
+    />
+
+  </aside>
+
+  <main class="auth-main">
+
+    <nav class="auth-nav">
+      <span>Already have an account?</span>
+
+      <a
+        routerLink="/register/signin"
+        class="btn btn--sm btn--outline">
+        Sign in
+      </a>
+    </nav>
+
+    <div class="mobile-brand">
+      Dev<span>ora</span>
+    </div>
+
+    <div class="auth-form-wrap">
+
+      <form
+        class="auth-form"
+        (ngSubmit)="onSubmit()"
+        novalidate>
+
+        <h2 class="auth-form__title">
+          Create your account
+        </h2>
+
+        <p class="auth-form__subtitle">
+          Sign up to start your learning journey with Devora.
+        </p>
+
+        <!-- First Name + Last Name -->
+        <div class="field-row">
+
+          <div
+            class="field"
+            [class.has-error]="errors.firstName">
+
+            <label for="firstName">
+              First Name
+            </label>
+
+            <div class="field__control">
+
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                [(ngModel)]="firstName"
+                placeholder="First name"
+                autocomplete="given-name"
+                [class.has-error]="errors.firstName"
+              />
+
+            </div>
+
+            <div class="field__error">
+              {{ errors.firstName }}
+            </div>
+
+          </div>
+
+
+          <div
+            class="field"
+            [class.has-error]="errors.lastName">
+
+            <label for="lastName">
+              Last Name
+            </label>
+
+            <div class="field__control">
+
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                [(ngModel)]="lastName"
+                placeholder="Last name"
+                autocomplete="family-name"
+                [class.has-error]="errors.lastName"
+              />
+
+            </div>
+
+            <div class="field__error">
+              {{ errors.lastName }}
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Email -->
+        <div
+          class="field"
+          [class.has-error]="errors.email">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <div class="field__control">
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              [class.has-error]="errors.email"
+            />
+
+          </div>
+
+          <div class="field__error">
+            {{ errors.email }}
+          </div>
+
+        </div>
+
+
+        <!-- Password -->
+        <div
+          class="field"
+          [class.has-error]="errors.password">
+
+          <label for="password">
+            Password
+          </label>
+
+          <div class="field__control">
+
+            <input
+              id="password"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
+              [(ngModel)]="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              [class.has-error]="errors.password"
+            />
+
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePassword()"
+              [attr.aria-label]="
+                showPassword
+                  ? 'Hide password'
+                  : 'Show password'
+              ">
+
+              <i
+                class="fa-regular"
+                [class.fa-eye]="!showPassword"
+                [class.fa-eye-slash]="showPassword">
+              </i>
+
+            </button>
+
+          </div>
+
+          <div class="field__error">
+            {{ errors.password }}
+          </div>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div
+          class="field"
+          [class.has-error]="errors.confirmPassword">
+
+          <label for="confirmPassword">
+            Confirm Password
+          </label>
+
+          <div class="field__control">
+
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              [type]="
+                showConfirmPassword
+                  ? 'text'
+                  : 'password'
+              "
+              [(ngModel)]="confirmPassword"
+              placeholder="Confirm your password"
+              autocomplete="new-password"
+              [class.has-error]="errors.confirmPassword"
+            />
+
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="toggleConfirmPassword()">
+
+              <i
+                class="fa-regular"
+                [class.fa-eye]="!showConfirmPassword"
+                [class.fa-eye-slash]="showConfirmPassword">
+              </i>
+
+            </button>
+
+          </div>
+
+          <div class="field__error">
+            {{ errors.confirmPassword }}
+          </div>
+
+        </div>
+
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="btn btn--primary btn--block"
+          routerLink="/register/signin">
+
+          Create Account
+
+        </button>
+
+
+        <p class="form-footnote">
+
+          Already have an account?
+
+          <a routerLink="/register/signin">
+            Sign in
+          </a>
+
+        </p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</div>

@@ -1,0 +1,169 @@
+<div class="auth-shell">
+
+  <!-- ============================= -->
+  <!-- Left Side -->
+  <!-- ============================= -->
+  <aside class="auth-panel">
+
+    <div class="auth-panel__content">
+
+      <h1 class="auth-panel__title">
+        Welcome to <span>Devora</span>
+      </h1>
+
+      <p class="auth-panel__text">
+        Build your skills, shape your future with code.
+        Start your coding journey and learn step by step,
+        from beginner to professional.
+      </p>
+
+    </div>
+
+    <img
+      class="auth-panel__illustration"
+      src="assets/illustration.png"
+      alt="Illustration of a student studying programming and math concepts"
+    />
+
+  </aside>
+
+
+  <!-- ============================= -->
+  <!-- Right Side -->
+  <!-- ============================= -->
+  <main class="auth-main">
+
+    <!-- Top Navigation -->
+    <nav class="auth-nav">
+
+      <a
+        class="link-accent"
+        routerLink="/register/signin">
+        Sign in
+      </a>
+
+      <a
+        class="btn btn--outline btn--sm"
+        routerLink="/register/signup">
+        Register
+      </a>
+
+    </nav>
+
+
+    <!-- Form -->
+    <div class="auth-form-wrap">
+
+      <form
+        class="auth-form"
+        (ngSubmit)="onSubmit()"
+        novalidate>
+
+        <!-- Mobile Brand -->
+        <div class="mobile-brand">
+          Welcome to <span>Devora</span>
+        </div>
+
+
+        <!-- Title -->
+        <h2 class="auth-form__title">
+          Verify code
+        </h2>
+
+
+        <!-- Subtitle -->
+        <p class="auth-form__subtitle">
+          Enter the 6-digit code we sent to your email.
+        </p>
+
+
+        <!-- ============================= -->
+        <!-- Verification Code -->
+        <!-- ============================= -->
+        <div
+          class="field field--code"
+          [class.has-error]="errors.code">
+
+          <label for="verify-code">
+            Code
+          </label>
+
+          <div class="field__control">
+
+            <input
+              type="text"
+              id="verify-code"
+              name="code"
+              placeholder="000000"
+              inputmode="numeric"
+              maxlength="6"
+              autocomplete="one-time-code"
+              [(ngModel)]="code"
+              [class.has-error]="errors.code"
+            />
+
+          </div>
+
+
+          <!-- Error -->
+          <p
+            class="field__error"
+            *ngIf="errors.code">
+
+            {{ errors.code }}
+
+          </p>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Resend Countdown -->
+        <!-- ============================= -->
+        <div class="field-hint field-hint--split">
+
+          <span>
+            Didn't receive a code?
+          </span>
+
+
+          <button
+            type="button"
+            class="link-inline"
+            [disabled]="resendDisabled"
+            (click)="onResend()">
+
+            <!-- During countdown -->
+            <span *ngIf="resendDisabled">
+              Resend in {{ remainingTime }}s
+            </span>
+
+
+            <!-- After countdown -->
+            <span *ngIf="!resendDisabled">
+              Resend
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Verify Button -->
+        <!-- ============================= -->
+        <button
+          type="submit"
+          class="btn btn--primary btn--block">
+
+          Verify
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</div>

@@ -1,0 +1,221 @@
+<div class="auth-shell">
+
+  <!-- ============================= -->
+  <!-- Left Side -->
+  <!-- ============================= -->
+
+  <aside class="auth-panel">
+
+    <div class="auth-panel__content">
+
+      <h1 class="auth-panel__title">
+        Welcome to <span>Devora</span>
+      </h1>
+
+      <p class="auth-panel__text">
+        Build your skills, shape your future with code.
+        Start your coding journey and learn step by step,
+        from beginner to professional.
+      </p>
+
+    </div>
+
+    <img
+      class="auth-panel__illustration"
+      src="assets/illustration.png"
+      alt="Illustration of a student studying programming and math concepts"
+    />
+
+  </aside>
+
+
+  <!-- ============================= -->
+  <!-- Right Side -->
+  <!-- ============================= -->
+
+  <main class="auth-main">
+
+    <!-- Top Navigation -->
+
+    <nav class="auth-nav">
+
+      <a
+        class="link-accent"
+        routerLink="/register/signin">
+        Sign in
+      </a>
+
+      <a
+        class="btn btn--outline btn--sm"
+        routerLink="/register/signup">
+        Register
+      </a>
+
+    </nav>
+
+
+    <!-- Form -->
+
+    <div class="auth-form-wrap">
+
+      <form
+        class="auth-form"
+        (ngSubmit)="onSubmit()"
+        novalidate>
+
+        <!-- Mobile Brand -->
+
+        <div class="mobile-brand">
+          Welcome to <span>Devora</span>
+        </div>
+
+
+        <!-- Title -->
+
+        <h2 class="auth-form__title">
+          Sign in
+        </h2>
+
+        <p class="auth-form__subtitle">
+          Welcome back! Please enter your details.
+        </p>
+
+
+        <!-- ============================= -->
+        <!-- Success Message -->
+        <!-- ============================= -->
+
+        <div
+          class="form-banner"
+          [class.is-visible]="successMessage">
+
+          <span>✓</span>
+
+          <span>
+            {{ successMessage }}
+          </span>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Email -->
+        <!-- ============================= -->
+
+        <div
+          class="field"
+          [class.has-error]="errors.email">
+
+          <label for="signin-email">
+            Email
+          </label>
+
+          <div class="field__control">
+
+            <input
+              type="email"
+              id="signin-email"
+              name="email"
+              placeholder="Enter Email"
+              autocomplete="email"
+              [(ngModel)]="email"
+              [class.has-error]="errors.email"
+            />
+
+          </div>
+
+          <p class="field__error">
+            {{ errors.email }}
+          </p>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Password -->
+        <!-- ============================= -->
+
+        <div
+          class="field"
+          [class.has-error]="errors.password">
+
+          <label for="signin-password">
+            Password
+          </label>
+
+          <div class="field__control">
+
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              id="signin-password"
+              name="password"
+              placeholder="Enter Password"
+              autocomplete="current-password"
+              [(ngModel)]="password"
+              [class.has-error]="errors.password"
+            />
+
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePassword()">
+
+              {{ showPassword ? 'Hide' : 'Show' }}
+
+            </button>
+
+          </div>
+
+          <p class="field__error">
+            {{ errors.password }}
+          </p>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Forgot Password -->
+        <!-- ============================= -->
+
+        <div class="field-hint">
+
+          <a routerLink="/register/forgot-password">
+            Forgot password?
+          </a>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Submit -->
+        <!-- ============================= -->
+
+        <button
+          type="submit"
+          class="btn btn--primary btn--block"
+          [disabled]="isSubmitting">
+          sign in
+        </button>
+
+
+        <!-- ============================= -->
+        <!-- Register -->
+        <!-- ============================= -->
+
+        <p class="form-footnote">
+
+          Don't have an account?
+
+          <a routerLink="/register/signup">
+            Register
+          </a>
+
+        </p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</div>

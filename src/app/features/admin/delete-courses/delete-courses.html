@@ -1,0 +1,231 @@
+<!-- ==========================================
+     ADMIN SIDEBAR
+     ========================================== -->
+
+<app-admin-sidebar></app-admin-sidebar>
+
+
+<!-- ==========================================
+     MAIN CONTENT
+     ========================================== -->
+
+
+  <main class="content">
+
+  <!-- ========================================
+       PAGE HEADER
+       ======================================== -->
+
+  <div class="top-section">
+
+    <div>
+      <h1 class="page-title">
+        Delete Courses
+      </h1>
+
+      <p class="page-subtitle">
+        Select the courses you want to delete.
+      </p>
+    </div>
+
+
+    <!-- Delete Selected Button -->
+
+    <button
+      type="button"
+      class="btn-delete-selected"
+      [disabled]="!hasSelectedCourses"
+      (click)="onDeleteSelected()">
+
+      <i class="fa-solid fa-trash"></i>
+
+      Delete Selected
+
+    </button>
+
+  </div>
+
+
+  <!-- ========================================
+       COURSES LIST
+       ======================================== -->
+
+  <div class="delete-list">
+
+
+    <!-- Course Card -->
+
+    <div
+      class="delete-card"
+      *ngFor="let course of courses">
+
+
+      <!-- Checkbox -->
+
+      <div class="checkbox-wrapper">
+
+        <input
+          type="checkbox"
+          [checked]="course.selected"
+          (change)="toggleSelection(course)"
+          [attr.aria-label]="'Select ' + course.title"
+        />
+
+      </div>
+
+
+      <!-- Course Icon / Image -->
+
+      <div
+        class="course-brand"
+        [ngClass]="course.brandClass || 'custom-bg'">
+
+
+        <!-- Uploaded Image -->
+
+        <img
+          *ngIf="course.image"
+          [src]="course.image"
+          [alt]="course.title"
+          class="brand-img"
+        />
+
+
+        <!-- FontAwesome Icon -->
+
+        <i
+          *ngIf="!course.image"
+          [class]="getCourseIcon(course)">
+        </i>
+
+      </div>
+
+
+      <!-- Course Information -->
+
+      <div class="course-info">
+
+        <h3>
+          {{ course.title }}
+        </h3>
+
+        <p>
+          {{ course.lessonsCount || 0 }}
+          lessons
+          <span>•</span>
+          {{ course.duration || '0h' }}
+          duration
+        </p>
+
+      </div>
+
+
+      <!-- Delete Single Course -->
+
+      <button
+        type="button"
+        class="btn-delete-icon"
+        (click)="onDeleteSingle(course)"
+        title="Delete course"
+        [attr.aria-label]="'Delete ' + course.title">
+
+        <i class="fa-solid fa-trash"></i>
+
+      </button>
+
+    </div>
+
+
+    <!-- ========================================
+         Empty State
+         ======================================== -->
+
+    <div
+      class="empty-state"
+      *ngIf="courses.length === 0">
+
+      <i class="fa-solid fa-folder-open"></i>
+
+      <h3>
+        No courses found
+      </h3>
+
+      <p>
+        There are no courses to delete.
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- ==========================================
+     DELETE CONFIRMATION MODAL
+     ========================================== -->
+
+<div
+  class="modal-overlay"
+  [class.active]="isModalOpen"
+  [style.display]="isModalOpen ? 'flex' : 'none'"
+  (click)="onOverlayClick($event)">
+
+
+  <div
+    class="modal-box"
+    (click)="$event.stopPropagation()">
+
+
+    <!-- Warning Icon -->
+
+    <div class="modal-icon">
+
+      <i class="fa-solid fa-triangle-exclamation"></i>
+
+    </div>
+
+
+    <!-- Title -->
+
+    <h2>
+      Are you sure?
+    </h2>
+
+
+    <!-- Message -->
+
+    <p>
+      This action cannot be undone.
+      The selected course will be permanently removed.
+    </p>
+
+
+    <!-- Buttons -->
+
+    <div class="modal-actions">
+
+      <button
+        type="button"
+        class="btn-cancel"
+        (click)="closeModal()">
+
+        Cancel
+
+      </button>
+
+
+      <button
+        type="button"
+        class="btn-confirm"
+        (click)="confirmDelete()">
+
+        Yes, Delete
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

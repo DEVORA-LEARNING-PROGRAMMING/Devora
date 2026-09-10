@@ -1,0 +1,66 @@
+<div class="quiz-wrapper">
+  <div class="quiz-container" id="quizContainer">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <h1 class="quiz-title" id="quizTitle">JavaScript Arrays Quiz</h1>
+      <div class="timer" [class.warning]="timeLeft <= 60">
+        <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span class="time" id="timerDisplay">{{ timerDisplayFormatted }}</span>
+      </div>
+    </div>
+
+    <!-- PROGRESS INFO -->
+    <div class="progress-info">
+      <p class="question-number" id="questionNumber">
+        Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
+      </p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" [style.width.%]="progressPercentage"></div>
+      </div>
+    </div>
+
+    <!-- QUESTION CARD -->
+    <div class="question-container">
+      <p class="question-text" id="questionText">
+        {{ currentQuestion.question }}
+      </p>
+
+      <div class="options" id="optionsContainer">
+        <button
+          *ngFor="let option of currentQuestion.options; let i = index"
+          class="option"
+          [class.selected]="isOptionSelected(i)"
+          (click)="selectOption(i)">
+          <span class="option-indicator"></span>
+          <span class="option-text">{{ option }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER ACTIONS -->
+    <div class="buttons">
+      <button
+        class="btn-prev"
+        id="prevBtn"
+        (click)="goToPrevious()"
+        [disabled]="isFirstQuestion">
+        ← Previous
+      </button>
+
+      <button class="btn-exit" id="exitBtn" (click)="exitQuiz()">Exit Quiz</button>
+
+      <button
+        class="btn-next"
+        id="nextBtn"
+        (click)="goToNext()"
+        [disabled]="!hasSelectedCurrentAnswer">
+        <span id="nexttext">{{ isLastQuestion ? 'Submit Quiz' : 'Next Question →' }}</span>
+      </button>
+    </div>
+
+  </div>
+</div>

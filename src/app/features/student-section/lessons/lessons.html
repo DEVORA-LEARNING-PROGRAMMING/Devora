@@ -1,0 +1,198 @@
+<div class="page">
+
+  <div class="page-content">
+
+    <header class="top-header">
+      <div class="header-info">
+        <h1>{{ currentLesson.title }}</h1>
+      </div>
+
+      <div class="header-progress">
+        <div class="progress-bar">
+          <div class="progress-value" [style.width.%]="progressPercentage"></div>
+        </div>
+        <span>{{ completedCount }}/19</span>
+      </div>
+    </header>
+
+    <div class="main-area">
+
+      <main class="lesson">
+
+        <section class="lesson-content">
+          <h2>Lesson content :</h2>
+          <div class="text-content">
+            <p *ngFor="let paragraph of currentLesson.content">
+              {{ paragraph }}
+            </p>
+          </div>
+        </section>
+
+        <section class="code-section">
+          <h2>Lesson code :</h2>
+          <div class="code-box">
+            <div class="code-top">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
+            </div>
+            <pre><code>{{ currentLesson.code }}</code></pre>
+          </div>
+        </section>
+
+        <div class="lesson-buttons">
+          <button 
+            class="previous" 
+            (click)="previousLesson()" 
+            [disabled]="activeLessonIndex === 0">
+            <span>←</span> Previous Lesson
+          </button>
+
+          <button class="back-course" routerLink="/student/courses">
+            Back to course
+          </button>
+
+          <button 
+            class="complete" 
+            (click)="nextLesson()" 
+            [disabled]="activeLessonIndex === lessons.length - 1">
+            Mark as completed &amp; continue <span>→</span>
+          </button>
+        </div>
+
+      </main>
+
+      <aside class="curriculum">
+        <h2>Course curriculum</h2>
+
+        <div class="module">
+          <h3>MODULE 1 — GETTING STARTED</h3>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(0)"
+            (click)="selectLessonByIndex(0)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(0) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(0) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(0) === 'locked'">🔒</span>
+              What is React?
+            </div>
+            <span>8 min</span>
+          </div>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(1)"
+            (click)="selectLessonByIndex(1)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(1) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(1) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(1) === 'locked'">🔒</span>
+              Environment setup
+            </div>
+            <span>12 min</span>
+          </div>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(2)"
+            (click)="selectLessonByIndex(2)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(2) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(2) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(2) === 'locked'">🔒</span>
+              Your first component
+            </div>
+            <span>11 min</span>
+          </div>
+        </div>
+
+        <div class="module">
+          <h3>MODULE 2 — STATE &amp; HOOKS</h3>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(3)"
+            (click)="selectLessonByIndex(3)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(3) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(3) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(3) === 'locked'">🔒</span>
+              useState in depth
+            </div>
+            <span>14 min</span>
+          </div>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(4)"
+            (click)="selectLessonByIndex(4)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(4) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(4) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(4) === 'locked'">🔒</span>
+              Handling events
+            </div>
+            <span>10 min</span>
+          </div>
+        </div>
+
+        <div class="module">
+          <h3>MODULE 3 — Whatever lessons</h3>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(5)"
+            (click)="selectLessonByIndex(5)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(5) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(5) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(5) === 'locked'">🔒</span>
+              lesson whatever
+            </div>
+            <span>15 min</span>
+          </div>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(6)"
+            (click)="selectLessonByIndex(6)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(6) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(6) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(6) === 'locked'">🔒</span>
+              lesson whatever
+            </div>
+            <span>15 min</span>
+          </div>
+        </div>
+
+        <div class="module">
+          <h3>MODULE 4 — Whatever lessons</h3>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(7)"
+            (click)="selectLessonByIndex(7)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(7) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(7) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(7) === 'locked'">🔒</span>
+              lesson whatever
+            </div>
+            <span>15 min</span>
+          </div>
+          <div 
+            class="curriculum-item" 
+            [ngClass]="getLessonStatusClass(8)"
+            (click)="selectLessonByIndex(8)">
+            <div>
+              <span class="check" *ngIf="getLessonStatus(8) === 'completed'">✅</span>
+              <span *ngIf="getLessonStatus(8) === 'active'">▶</span>
+              <span *ngIf="getLessonStatus(8) === 'locked'">🔒</span>
+              lesson whatever
+            </div>
+            <span>15 min</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</div>

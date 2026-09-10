@@ -1,0 +1,145 @@
+<div class="dashboard-layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <app-sidebar></app-sidebar>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="main-content">
+
+    <!-- ================= TOP BAR ================= -->
+    <app-search-header></app-search-header>
+
+    <!-- ================= QUIZZES SECTION ================= -->
+    <section class="quiz-page">
+
+      <!-- TITLE -->
+      <div class="page-heading">
+        <h1>Quizzes</h1>
+        <p>Test Yourself</p>
+      </div>
+
+      <!-- ================= CATEGORIES ================= -->
+      <div class="categories">
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'All'"
+          (click)="selectCategory('All')">
+          All
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'HTML & CSS'"
+          (click)="selectCategory('HTML & CSS')">
+          HTML & CSS
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'Javascript'"
+          (click)="selectCategory('Javascript')">
+          Javascript
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'React'"
+          (click)="selectCategory('React')">
+          React
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'Python'"
+          (click)="selectCategory('Python')">
+          Python
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'Java'"
+          (click)="selectCategory('Java')">
+          Java
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'C++'"
+          (click)="selectCategory('C++')">
+          C++
+        </button>
+
+        <button
+          class="category"
+          [class.active]="selectedCategory === 'Git & GitHub'"
+          (click)="selectCategory('Git & GitHub')">
+          Git & GitHub
+        </button>
+
+      </div>
+
+      <!-- ================= RESULTS ================= -->
+      <div class="results-count">
+        <span>{{ filteredQuizzes.length }}</span> results
+      </div>
+
+      <!-- ================= QUIZZES ================= -->
+      <div class="quiz-container">
+
+        @for (quiz of filteredQuizzes; track quiz.name) {
+
+          <div class="quiz-card">
+
+            <!-- QUIZ ICON -->
+            <div class="quiz-logo {{ quiz.logo }}">
+  <i [class]="quiz.icon"></i>
+</div>
+            <!-- QUIZ INFO -->
+            <div class="quiz-info">
+
+              <h3>{{ quiz.name }}</h3>
+
+              <p>{{ quiz.questions }} Questions</p>
+
+            </div>
+
+            <!-- QUIZ ACTIONS -->
+            <div class="quiz-actions">
+
+              <span class="quiz-time">
+                15 mins
+              </span>
+
+              <button class="start-btn" routerLink="/student/exam/:id">
+                Start Now
+              </button>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+      <!-- ================= EMPTY STATE ================= -->
+      @if (filteredQuizzes.length === 0) {
+
+        <div class="empty-state">
+
+          <h2>No quizzes found</h2>
+
+          <p>
+            Try another category.
+          </p>
+
+        </div>
+
+      }
+
+    </section>
+
+  </main>
+
+</div>

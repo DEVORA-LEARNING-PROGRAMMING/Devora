@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: #f1f5f9;
+  font-family: '42dot Sans', sans-serif;
+  padding: 20px;
+}
+
+/* Wrapper centering */
+.quiz-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.quiz-container {
+  width: 100%;
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quiz-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Timer */
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #4461F2;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(68, 97, 242, 0.25);
+}
+
+.timer.warning {
+  background: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 1; }
+  to { opacity: 0.8; }
+}
+
+.clock-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.time {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Progress Section */
+.progress-info {
+  margin-bottom: 20px;
+}
+
+.question-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4461F2;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Question Container */
+.question-container {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 24px;
+  white-space: pre-line;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.option.selected {
+  background-color: #4461F2;
+  border-color: #4461F2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(68, 97, 242, 0.25);
+}
+
+/* Actions Bar */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-prev,
+.btn-next {
+  width: 180px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-prev {
+  background-color: #ffffff;
+  border: 2px solid #4461F2;
+  color: #4461F2;
+}
+
+.btn-prev:hover:not(:disabled) {
+  background-color: #eef2fe;
+}
+
+.btn-next {
+  background-color: #4461F2;
+  border: 2px solid #4461F2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(68, 97, 242, 0.2);
+}
+
+.btn-next:hover:not(:disabled) {
+  background-color: #3350e0;
+  border-color: #3350e0;
+}
+
+.btn-exit {
+  color: #64748b;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-exit:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Disabled Status */
+.btn-prev:disabled,
+.btn-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .quiz-title {
+    font-size: 20px;
+  }
+
+  .question-container {
+    padding: 20px;
+  }
+
+  .question-text {
+    font-size: 17px;
+  }
+
+  .btn-prev,
+  .btn-next {
+    width: 130px;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .btn-exit {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

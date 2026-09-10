@@ -1,0 +1,481 @@
+:host {
+  display: block;
+
+  --blue: #465df3;
+  --blue-dark: #384ed8;
+  --background: #eef2ff;
+  --white: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --border: #465df3;
+
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.page-layout app-sidebar {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.page-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  height: 150px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 48px;
+
+  border-bottom: 1px solid #dedede;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.notification-icon {
+  width: 28px;
+  height: 28px;
+  color: #111111;
+}
+
+.header-avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.profile-content {
+  padding: 36px 32px 60px;
+}
+
+
+/* =========================
+   PROFILE HEADER
+========================= */
+
+.profile-header {
+  width: 100%;
+
+  min-height: 148px;
+
+  background: #ffffff;
+
+  border: 1.5px solid var(--border);
+  border-radius: 30px;
+
+  padding: 20px 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 32px;
+}
+
+
+/* Avatar */
+
+.avatar {
+  border-radius: 50%;
+
+  background: var(--blue);
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-weight: 600;
+}
+
+.avatar--lg {
+  width: 80px;
+  height: 80px;
+
+  font-size: 28px;
+}
+
+
+/* Profile Info */
+
+.profile-header__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-header__info h2 {
+  margin: 0 0 4px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.profile-header__meta {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+  color: #777777;
+}
+
+.profile-header__bio {
+  margin: 0;
+
+  max-width: 650px;
+
+  font-size: 15px;
+  line-height: 1.35;
+
+  color: #777777;
+}
+
+
+/* Edit Button */
+
+.edit-btn {
+  min-width: 150px;
+  height: 50px;
+
+  padding: 0 22px;
+
+  border: 1.5px solid var(--blue);
+  border-radius: 20px;
+
+  background: white;
+
+  color: var(--blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.edit-btn:hover {
+  background: var(--blue);
+  color: white;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin: 0 32px 46px;
+}
+
+.stat-card {
+  height: 115px;
+
+  background: #ffffff;
+
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.stat-card__value {
+  font-size: 34px;
+  font-weight: 700;
+
+  margin-bottom: 4px;
+}
+
+.stat-card__label {
+  font-size: 20px;
+  color: #666666;
+}
+
+
+/* =========================
+   ACHIEVEMENTS TITLE
+========================= */
+
+.achievements-title {
+  margin: 0 0 20px 32px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ACHIEVEMENTS CONTAINER
+========================= */
+
+.achievements-container {
+  background: #ffffff;
+
+  border: 1.5px solid var(--blue);
+  border-radius: 28px;
+
+  padding: 28px 24px;
+
+  margin: 0 20px;
+}
+
+
+/* =========================
+   ACHIEVEMENT ROW
+========================= */
+
+.achievement-row {
+  min-height: 98px;
+
+  border: 1.5px solid var(--blue);
+  border-radius: 18px;
+
+  padding: 10px 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  background: #ffffff;
+}
+
+.achievement-row + .achievement-row {
+  margin-top: 30px;
+}
+
+
+/* =========================
+   ACHIEVEMENT ICON
+========================= */
+
+.achievement-icon {
+  width: 68px;
+  height: 68px;
+
+  border-radius: 14px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.achievement-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+
+/* =========================
+   ACHIEVEMENT INFO
+========================= */
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-info h3 {
+  margin: 0 0 3px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.achievement-info p {
+  margin: 0;
+
+  font-size: 14px;
+  color: #111111;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.view-btn {
+  width: 132px;
+  height: 38px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--blue);
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.view-btn:hover {
+  background: var(--blue-dark);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-header {
+    flex-wrap: wrap;
+  }
+
+  .edit-btn {
+    margin-left: auto;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .page-header {
+    padding: 0 20px;
+  }
+
+  .profile-content {
+    padding: 20px 12px 40px;
+  }
+
+  .stats-grid {
+    margin: 0 0 30px;
+  }
+
+  .achievements-title {
+    margin-left: 0;
+  }
+
+  .achievements-container {
+    margin: 0;
+  }
+
+  .achievement-row {
+    gap: 15px;
+    padding: 12px;
+  }
+
+  .achievement-info h3 {
+    font-size: 16px;
+  }
+
+  .view-btn {
+    width: 90px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header {
+    padding: 20px;
+  }
+
+  .edit-btn {
+    width: 100%;
+  }
+
+  .achievement-row {
+    flex-wrap: wrap;
+  }
+
+  .view-btn {
+    width: 100%;
+  }
+}
