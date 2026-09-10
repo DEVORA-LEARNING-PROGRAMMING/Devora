@@ -1,56 +1,72 @@
-# ExamPlatform
+# ExamPlatform — Devora Frontend 🎓
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
+> Angular frontend for the Devora e-learning platform — programming courses for high-school & baccalaureate students.
 
-## Development server
+![Status](https://img.shields.io/badge/status-in%20development-yellow)
+![Angular](https://img.shields.io/badge/Angular-21-red)
 
-To start a local development server, run:
+## 📖 About
+
+ExamPlatform is the student-facing and admin-facing web app for Devora, an e-learning system teaching programming to high-school and baccalaureate students. Built with Angular as part of the NTI program.
+
+## ✨ Features
+
+- 🔐 Authentication (Sign up, Sign in, Forgot/Reset password)
+- 👤 Profile & settings management
+- 📚 Student dashboard, courses, and quizzes
+- 🛠️ Admin panel for course & student management
+- 🎨 Devora design system (Figma-based UI)
+
+## 🧱 Tech Stack
+
+Angular 21, TypeScript, HTML, SCSS
+
+## 🚀 Getting Started
+
+Clone the repo:
+
+```bash
+git clone https://github.com/FatmaElghoury/NTI_front_project_withoutAPI.git
+cd NTI_front_project_withoutAPI
+npm install
+```
+
+Start the dev server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/` — the app reloads automatically on file changes.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🏗️ Building
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build artifacts are output to the `dist/` directory, optimized for production by default.
 
-## Running unit tests
+## 🧪 Testing
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Unit tests (via Vitest):
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📁 Project Structure
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
 ```
+src/app/
+├── core/           # Guards, interceptors, services, models
+├── features/       # Feature modules (auth, student-section, admin, profile, settings)
+└── shared/         # Reusable components (sidebar, search-header)
+```
+
+## 📌 Status
+
+🚧 Actively in development.
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
