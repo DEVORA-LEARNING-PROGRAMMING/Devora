@@ -8,9 +8,11 @@
 
     <!-- Header -->
     <header class="page-header">
+
       <h1>Profile</h1>
 
       <div class="header-actions">
+
         <!-- Notification -->
         <svg
           class="notification-icon"
@@ -22,29 +24,63 @@
           <path
             d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
           />
+
           <path d="M10 21h4" />
         </svg>
 
         <!-- Header Avatar -->
-        <div class="header-avatar">
-          {{ initials }}
+        <div
+          class="header-avatar"
+          [style.background-image]="
+            avatarUrl
+              ? 'url(' + avatarUrl + ')'
+              : null
+          "
+          [style.background-size]="'cover'"
+          [style.background-position]="'center'"
+        >
+          <ng-container *ngIf="!avatarUrl">
+            {{ initials }}
+          </ng-container>
         </div>
+
       </div>
+
     </header>
 
 
     <!-- Page Content -->
     <section class="profile-content">
 
+
       <!-- Profile Header Card -->
       <div class="profile-header">
 
-        <div class="avatar avatar--lg">
-          {{ initials }}
+        <!-- Profile Avatar -->
+        <div
+          class="avatar avatar--lg"
+          [style.background-image]="
+            avatarUrl
+              ? 'url(' + avatarUrl + ')'
+              : null
+          "
+          [style.background-size]="'cover'"
+          [style.background-position]="'center'"
+        >
+
+          <ng-container *ngIf="!avatarUrl">
+            {{ initials }}
+          </ng-container>
+
         </div>
 
+
+        <!-- Profile Information -->
         <div class="profile-header__info">
-          <h2>{{ fullName }}</h2>
+
+          <h2>
+            {{ fullName }}
+          </h2>
 
           <p class="profile-header__meta">
             @{{ username }} · {{ email }}
@@ -53,9 +89,15 @@
           <p class="profile-header__bio">
             {{ bio }}
           </p>
+
         </div>
 
-        <a routerLink="/student/settings" class="edit-btn">
+
+        <!-- Edit Profile -->
+        <a
+          routerLink="/student/settings"
+          class="edit-btn"
+        >
           Edit Profile
         </a>
 
@@ -65,7 +107,11 @@
       <!-- Statistics -->
       <div class="stats-grid">
 
-        <div class="stat-card" *ngFor="let stat of stats">
+        <div
+          class="stat-card"
+          *ngFor="let stat of stats"
+        >
+
           <div class="stat-card__value">
             {{ stat.value }}
           </div>
@@ -73,6 +119,7 @@
           <div class="stat-card__label">
             {{ stat.label }}
           </div>
+
         </div>
 
       </div>
@@ -83,6 +130,7 @@
         Achievements
       </h2>
 
+
       <div class="achievements-container">
 
         <div
@@ -90,13 +138,14 @@
           *ngFor="let achievement of achievements"
         >
 
-          <!-- Icon -->
+
+          <!-- Achievement Icon -->
           <div
             class="achievement-icon"
             [style.background]="achievement.iconBg"
           >
 
-            <!-- HTML -->
+            <!-- HTML Icon -->
             <svg
               *ngIf="achievement.icon === 'html'"
               viewBox="0 0 24 24"
@@ -107,7 +156,8 @@
               />
             </svg>
 
-            <!-- CSS -->
+
+            <!-- CSS Icon -->
             <svg
               *ngIf="achievement.icon === 'css'"
               viewBox="0 0 24 24"
@@ -118,7 +168,8 @@
               />
             </svg>
 
-            <!-- JS -->
+
+            <!-- JavaScript Icon -->
             <span *ngIf="achievement.icon === 'js'">
               JS
             </span>
@@ -126,7 +177,7 @@
           </div>
 
 
-          <!-- Achievement Info -->
+          <!-- Achievement Information -->
           <div class="achievement-info">
 
             <h3>

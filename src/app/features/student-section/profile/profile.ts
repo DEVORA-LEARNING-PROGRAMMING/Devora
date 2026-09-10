@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SidebarComponent } from '../../../shared/sidebar/sidebar';
+import { UserService } from '../../../shared/services/user.service';
 
 interface Stat {
   value: string;
@@ -28,14 +29,37 @@ interface Achievement {
 })
 export class ProfileComponent {
 
-  fullName = 'Youssef Essam';
+  constructor(private userService: UserService) {}
 
-  username = 'youssef.codes';
+  get user() {
+    return this.userService.getUser();
+  }
 
-  email = 'Youssef9@devora.io';
+  get fullName(): string {
+    return `${this.user.firstName} ${this.user.lastName}`;
+  }
 
-  bio =
-    'Frontend learner building toward a career switch into web development. Currently deep in React.';
+  get username(): string {
+    return this.user.username;
+  }
+
+  get email(): string {
+    return this.user.email;
+  }
+
+  get bio(): string {
+    return this.user.bio;
+  }
+
+  get avatarUrl(): string | null {
+    return this.user.avatarUrl;
+  }
+
+  get initials(): string {
+
+    return `${this.user.firstName[0] ?? ''}${this.user.lastName[0] ?? ''}`
+      .toUpperCase();
+  }
 
 
   stats: Stat[] = [
@@ -82,19 +106,6 @@ export class ProfileComponent {
     }
 
   ];
-
-
-  get initials(): string {
-
-    return this.fullName
-      .split(' ')
-      .filter(Boolean)
-      .map(part => part[0])
-      .join('')
-      .slice(0, 2)
-      .toUpperCase();
-
-  }
 
 
   onViewAchievement(
