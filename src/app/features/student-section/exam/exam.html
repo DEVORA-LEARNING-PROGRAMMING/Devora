@@ -1,7 +1,6 @@
 <div class="quiz-wrapper">
   <div class="quiz-container" id="quizContainer">
-    
-    <!-- HEADER -->
+
     <div class="header">
       <h1 class="quiz-title" id="quizTitle">JavaScript Arrays Quiz</h1>
       <div class="timer" [class.warning]="timeLeft <= 60">
@@ -13,7 +12,6 @@
       </div>
     </div>
 
-    <!-- PROGRESS INFO -->
     <div class="progress-info">
       <p class="question-number" id="questionNumber">
         Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
@@ -23,7 +21,6 @@
       </div>
     </div>
 
-    <!-- QUESTION CARD -->
     <div class="question-container">
       <p class="question-text" id="questionText">
         {{ currentQuestion.question }}
@@ -41,7 +38,6 @@
       </div>
     </div>
 
-    <!-- FOOTER ACTIONS -->
     <div class="buttons">
       <button
         class="btn-prev"

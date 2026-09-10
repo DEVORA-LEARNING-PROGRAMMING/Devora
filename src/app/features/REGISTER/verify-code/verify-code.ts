@@ -94,7 +94,6 @@ export class VerifyCodeComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Mock only - no API
     console.log('Code resent');
 
     this.startTimer();
@@ -112,7 +111,6 @@ export class VerifyCodeComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Mock only - no API
     this.router.navigate(['/register/signin'], {
       queryParams: {
         verified: 1

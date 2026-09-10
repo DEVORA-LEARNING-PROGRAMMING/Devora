@@ -13,7 +13,6 @@
   padding: 20px;
 }
 
-/* Wrapper centering */
 .quiz-wrapper {
   width: 100%;
   display: flex;
@@ -21,7 +20,6 @@
   align-items: center;
 }
 
-/* Container */
 .quiz-container {
   width: 100%;
   max-width: 740px;
@@ -29,7 +27,6 @@
   flex-direction: column;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -44,7 +41,6 @@
   margin: 0;
 }
 
-/* Timer */
 .timer {
   display: flex;
   align-items: center;
@@ -79,7 +75,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Progress Section */
 .progress-info {
   margin-bottom: 20px;
 }
@@ -107,7 +102,6 @@
   transition: width 0.3s ease;
 }
 
-/* Question Container */
 .question-container {
   width: 100%;
   border-radius: 20px;
@@ -127,7 +121,6 @@
   white-space: pre-line;
 }
 
-/* Options */
 .options {
   display: flex;
   flex-direction: column;
@@ -163,7 +156,6 @@
   box-shadow: 0 4px 12px rgba(68, 97, 242, 0.25);
 }
 
-/* Actions Bar */
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -221,7 +213,6 @@
   color: #0f172a;
 }
 
-/* Disabled Status */
 .btn-prev:disabled,
 .btn-next:disabled {
   opacity: 0.4;
@@ -229,7 +220,6 @@
   box-shadow: none;
 }
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
   .quiz-title {
     font-size: 20px;

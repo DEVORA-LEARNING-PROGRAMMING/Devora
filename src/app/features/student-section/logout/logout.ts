@@ -17,8 +17,7 @@ export class LogoutComponent {
   }
 
   onConfirmLogout(): void {
-    // No backend yet — this is where a real sign-out request (clearing the
-    // session/token) would go before redirecting to sign in.
+
     this.router.navigate(['/student/landing']);
   }
 }

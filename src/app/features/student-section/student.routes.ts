@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 export const studentRoutes: Routes = [
 
-  // Landing
   {
     path: '',
     loadComponent: () =>
@@ -11,7 +10,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Dashboard
   {
     path: 'dashboard',
     loadComponent: () =>
@@ -20,7 +18,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Courses
   {
     path: 'courses',
     loadComponent: () =>
@@ -29,7 +26,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Quizzes
   {
     path: 'quizes',
     loadComponent: () =>
@@ -38,7 +34,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Progress
   {
     path: 'progress',
     loadComponent: () =>
@@ -47,7 +42,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Achievements
   {
     path: 'achievement',
     loadComponent: () =>
@@ -56,7 +50,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Profile
   {
     path: 'profile',
     loadComponent: () =>
@@ -65,7 +58,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Settings
   {
     path: 'settings',
     loadComponent: () =>
@@ -74,7 +66,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Logout
   {
     path: 'logout',
     loadComponent: () =>
@@ -83,7 +74,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Lesson
   {
     path: 'lesson/:id',
     loadComponent: () =>
@@ -92,7 +82,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Exam
   {
     path: 'exam/:id',
     loadComponent: () =>
@@ -101,7 +90,6 @@ export const studentRoutes: Routes = [
   },
 
 
-  // Exam Result
   {
     path: 'result',
     loadComponent: () =>

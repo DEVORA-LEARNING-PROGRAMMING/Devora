@@ -1,24 +1,18 @@
 <div class="dashboard-layout">
 
-  <!-- ================= SIDEBAR ================= -->
   <app-sidebar></app-sidebar>
 
-  <!-- ================= MAIN CONTENT ================= -->
   <main class="main-content">
 
-    <!-- ================= TOP BAR ================= -->
     <app-search-header></app-search-header>
 
-    <!-- ================= COURSES SECTION ================= -->
     <section class="courses-section">
 
-      <!-- TITLE -->
       <div class="page-heading">
         <h1>Explore courses</h1>
         <p>courses across every stage of your coding journey.</p>
       </div>
 
-      <!-- ================= FILTERS ================= -->
       <div class="filters">
         @for (category of categories; track category) {
           <button
@@ -30,7 +24,6 @@
         }
       </div>
 
-      <!-- ================= ADVANCED FILTER ================= -->
       <div class="advanced-filters">
 
         <label for="level-filter">Level</label>
@@ -50,15 +43,12 @@
 
       </div>
 
-      <!-- RESULTS -->
       <div class="results-count">
         <span>{{ filteredCourses.length }}</span> results
       </div>
 
-      <!-- ================= COURSES ================= -->
       <div class="courses-container">
         @for (course of filteredCourses; track course.id) {
-          <!-- تم إزالة حدث (click) من الكارت لعدم إمكانية الضغط عليه -->
           <div class="course-card">
 
             <div class="course-icon" [ngClass]="course.iconClass">
@@ -78,7 +68,6 @@
 
             <div class="course-action">
               <span class="level">{{ course.level }}</span>
-              <!-- الضغط أصبح على هذا الزر فقط -->
               <button routerLink="/student/lessons/:id" class="enroll-btn" (click)="navigateToLesson(course.id)">
                 Start Now
               </button>
@@ -88,7 +77,6 @@
         }
       </div>
 
-      <!-- EMPTY STATE -->
       @if (filteredCourses.length === 0) {
         <div class="empty-state">
           <h2>No courses found</h2>

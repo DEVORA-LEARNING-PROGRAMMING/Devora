@@ -8,18 +8,12 @@
   background: #eef3ff;
 }
 
-/* =========================
-   Main
-========================= */
 
 .progress-main {
   flex: 1;
   min-width: 0;
 }
 
-/* =========================
-   Header
-========================= */
 
 .page-header {
   height: 148px;
@@ -60,17 +54,10 @@
   font-weight: 600;
 }
 
-/* =========================
-   Content
-========================= */
 
 .progress-content {
   padding: 25px 58px 45px;
 }
-
-/* =========================
-   Statistics
-========================= */
 
 .stats-grid {
   display: grid;
@@ -115,9 +102,7 @@
   color: #666666;
 }
 
-/* =========================
-   Middle
-========================= */
+
 
 .middle-grid {
   display: grid;
@@ -129,9 +114,6 @@
   margin-bottom: 32px;
 }
 
-/* =========================
-   Weekly Activity
-========================= */
 
 .activity-card,
 .skills-card {
@@ -186,9 +168,6 @@
   font-size: 14px;
 }
 
-/* =========================
-   Skills
-========================= */
 
 .skills {
   margin-top: 58px;
@@ -220,9 +199,7 @@
   font-weight: 500;
 }
 
-/* =========================
-   Courses
-========================= */
+
 
 .courses-section h2 {
   margin: 0 0 16px 12px;
@@ -242,9 +219,6 @@
   padding: 25px 42px;
 }
 
-/* =========================
-   Course Row
-========================= */
 
 .course-row {
   min-height: 88px;
@@ -294,9 +268,6 @@
   color: #ffffff;
 }
 
-/* =========================
-   Course Details
-========================= */
 
 .course-details {
   flex: 1;
@@ -320,9 +291,6 @@
   color: #777777;
 }
 
-/* =========================
-   Progress Bar
-========================= */
 
 .progress {
   width: 100%;
@@ -354,9 +322,6 @@
   background: #e3bd61;
 }
 
-/* =========================
-   Percentage
-========================= */
 
 .course-percent {
   position: absolute;
@@ -385,9 +350,6 @@
   background: #efd589;
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1100px) {
 

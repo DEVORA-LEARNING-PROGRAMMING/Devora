@@ -1,19 +1,15 @@
 <div class="page-layout">
 
-  <!-- Sidebar -->
   <app-sidebar></app-sidebar>
 
-  <!-- Main Page -->
   <main class="page-content">
 
-    <!-- Header -->
     <header class="page-header">
 
       <h1>Profile</h1>
 
       <div class="header-actions">
 
-        <!-- Notification -->
         <svg
           class="notification-icon"
           viewBox="0 0 24 24"
@@ -28,7 +24,6 @@
           <path d="M10 21h4" />
         </svg>
 
-        <!-- Header Avatar -->
         <div
           class="header-avatar"
           [style.background-image]="
@@ -49,14 +44,11 @@
     </header>
 
 
-    <!-- Page Content -->
     <section class="profile-content">
 
 
-      <!-- Profile Header Card -->
       <div class="profile-header">
 
-        <!-- Profile Avatar -->
         <div
           class="avatar avatar--lg"
           [style.background-image]="
@@ -75,7 +67,6 @@
         </div>
 
 
-        <!-- Profile Information -->
         <div class="profile-header__info">
 
           <h2>
@@ -93,7 +84,6 @@
         </div>
 
 
-        <!-- Edit Profile -->
         <a
           routerLink="/student/settings"
           class="edit-btn"
@@ -104,7 +94,6 @@
       </div>
 
 
-      <!-- Statistics -->
       <div class="stats-grid">
 
         <div
@@ -125,7 +114,6 @@
       </div>
 
 
-      <!-- Achievements -->
       <h2 class="achievements-title">
         Achievements
       </h2>
@@ -139,13 +127,11 @@
         >
 
 
-          <!-- Achievement Icon -->
           <div
             class="achievement-icon"
             [style.background]="achievement.iconBg"
           >
 
-            <!-- HTML Icon -->
             <svg
               *ngIf="achievement.icon === 'html'"
               viewBox="0 0 24 24"
@@ -157,7 +143,6 @@
             </svg>
 
 
-            <!-- CSS Icon -->
             <svg
               *ngIf="achievement.icon === 'css'"
               viewBox="0 0 24 24"
@@ -169,7 +154,6 @@
             </svg>
 
 
-            <!-- JavaScript Icon -->
             <span *ngIf="achievement.icon === 'js'">
               JS
             </span>
@@ -177,7 +161,6 @@
           </div>
 
 
-          <!-- Achievement Information -->
           <div class="achievement-info">
 
             <h3>
@@ -191,7 +174,6 @@
           </div>
 
 
-          <!-- View Button -->
           <button
             type="button"
             class="view-btn"

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { Course } from '../manage-courses/manage-courses'; // اضبط المسار بحسب مشروعك
+import { Course } from '../manage-courses/manage-courses'
 import { SidebarComponent } from '../../../shared/sidebar.admin/sidebar.admin';
 
 @Component({
@@ -55,17 +55,13 @@ export class AddCourseComponent {
       image: this.previewUrl || undefined
     };
 
-    // جلب البيانات الحالية من localStorage
     const storedCourses = localStorage.getItem('courses');
     const coursesList: Course[] = storedCourses ? JSON.parse(storedCourses) : [];
 
-    // إضافة الكورس الجديد في البداية
     coursesList.unshift(newCourse);
 
-    // إعادة حفظ القائمة المعدلة
     localStorage.setItem('courses', JSON.stringify(coursesList));
 
-    // التوجيه إلى صفحة الكورسات
     this.router.navigate(['/admin/manage-courses']);
   }
 }

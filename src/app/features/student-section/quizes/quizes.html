@@ -1,24 +1,18 @@
 <div class="dashboard-layout">
 
-  <!-- ================= SIDEBAR ================= -->
   <app-sidebar></app-sidebar>
 
-  <!-- ================= MAIN CONTENT ================= -->
   <main class="main-content">
 
-    <!-- ================= TOP BAR ================= -->
     <app-search-header></app-search-header>
 
-    <!-- ================= QUIZZES SECTION ================= -->
     <section class="quiz-page">
 
-      <!-- TITLE -->
       <div class="page-heading">
         <h1>Quizzes</h1>
         <p>Test Yourself</p>
       </div>
 
-      <!-- ================= CATEGORIES ================= -->
       <div class="categories">
 
         <button
@@ -79,23 +73,19 @@
 
       </div>
 
-      <!-- ================= RESULTS ================= -->
       <div class="results-count">
         <span>{{ filteredQuizzes.length }}</span> results
       </div>
 
-      <!-- ================= QUIZZES ================= -->
       <div class="quiz-container">
 
         @for (quiz of filteredQuizzes; track quiz.name) {
 
           <div class="quiz-card">
 
-            <!-- QUIZ ICON -->
             <div class="quiz-logo {{ quiz.logo }}">
   <i [class]="quiz.icon"></i>
 </div>
-            <!-- QUIZ INFO -->
             <div class="quiz-info">
 
               <h3>{{ quiz.name }}</h3>
@@ -104,7 +94,6 @@
 
             </div>
 
-            <!-- QUIZ ACTIONS -->
             <div class="quiz-actions">
 
               <span class="quiz-time">
@@ -123,7 +112,6 @@
 
       </div>
 
-      <!-- ================= EMPTY STATE ================= -->
       @if (filteredQuizzes.length === 0) {
 
         <div class="empty-state">

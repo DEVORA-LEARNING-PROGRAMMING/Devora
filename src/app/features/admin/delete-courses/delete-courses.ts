@@ -26,9 +26,7 @@ interface Course {
 })
 export class DeleteCoursesComponent implements OnInit {
 
-  // ==========================================
-  // Default Courses
-  // ==========================================
+
 
   defaultCourses: Course[] = [
 
@@ -65,9 +63,6 @@ export class DeleteCoursesComponent implements OnInit {
   ];
 
 
-  // ==========================================
-  // Variables
-  // ==========================================
 
   courses: Course[] = [];
 
@@ -76,18 +71,12 @@ export class DeleteCoursesComponent implements OnInit {
   itemsToDelete: Course[] = [];
 
 
-  // ==========================================
-  // Initialize
-  // ==========================================
 
   ngOnInit(): void {
     this.loadCourses();
   }
 
 
-  // ==========================================
-  // Load Courses
-  // ==========================================
 
   loadCourses(): void {
 
@@ -128,9 +117,6 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Get Course Icon
-  // ==========================================
 
   getCourseIcon(course: Course): string {
 
@@ -138,7 +124,6 @@ export class DeleteCoursesComponent implements OnInit {
       return 'fa-solid fa-graduation-cap';
     }
 
-    // If the icon already contains FontAwesome classes
     if (course.icon.includes('fa-')) {
       return course.icon;
     }
@@ -170,9 +155,6 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Check Selected Courses
-  // ==========================================
 
   get hasSelectedCourses(): boolean {
 
@@ -182,9 +164,6 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Select / Unselect Course
-  // ==========================================
 
   toggleSelection(course: Course): void {
 
@@ -192,9 +171,7 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Delete Single Course
-  // ==========================================
+
 
   onDeleteSingle(course: Course): void {
 
@@ -204,9 +181,7 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Delete Selected Courses
-  // ==========================================
+
 
   onDeleteSelected(): void {
 
@@ -224,9 +199,6 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Confirm Delete
-  // ==========================================
 
   confirmDelete(): void {
 
@@ -234,26 +206,22 @@ export class DeleteCoursesComponent implements OnInit {
       this.itemsToDelete.map(course => course.id)
     );
 
-    // Remove courses from displayed list
     this.courses = this.courses.filter(
       course => !idsToRemove.has(course.id)
     );
 
 
-    // Remove "selected" before saving
     const coursesToSave = this.courses.map(
       ({ selected, ...course }) => course
     );
 
 
-    // Update localStorage
     localStorage.setItem(
       'courses',
       JSON.stringify(coursesToSave)
     );
 
 
-    // Clear delete list
     this.itemsToDelete = [];
 
 
@@ -262,9 +230,6 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Open Modal
-  // ==========================================
 
   openModal(): void {
 
@@ -272,19 +237,12 @@ export class DeleteCoursesComponent implements OnInit {
   }
 
 
-  // ==========================================
-  // Close Modal
-  // ==========================================
-
   closeModal(): void {
 
     this.isModalOpen = false;
   }
 
 
-  // ==========================================
-  // Click Outside Modal
-  // ==========================================
 
   onOverlayClick(event: MouseEvent): void {
 

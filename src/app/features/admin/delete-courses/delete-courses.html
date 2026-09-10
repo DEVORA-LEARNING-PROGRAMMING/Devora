@@ -1,20 +1,12 @@
-<!-- ==========================================
-     ADMIN SIDEBAR
-     ========================================== -->
 
 <app-admin-sidebar></app-admin-sidebar>
 
 
-<!-- ==========================================
-     MAIN CONTENT
-     ========================================== -->
 
 
   <main class="content">
 
-  <!-- ========================================
-       PAGE HEADER
-       ======================================== -->
+
 
   <div class="top-section">
 
@@ -29,7 +21,6 @@
     </div>
 
 
-    <!-- Delete Selected Button -->
 
     <button
       type="button"
@@ -46,21 +37,16 @@
   </div>
 
 
-  <!-- ========================================
-       COURSES LIST
-       ======================================== -->
 
   <div class="delete-list">
 
 
-    <!-- Course Card -->
 
     <div
       class="delete-card"
       *ngFor="let course of courses">
 
 
-      <!-- Checkbox -->
 
       <div class="checkbox-wrapper">
 
@@ -74,14 +60,12 @@
       </div>
 
 
-      <!-- Course Icon / Image -->
 
       <div
         class="course-brand"
         [ngClass]="course.brandClass || 'custom-bg'">
 
 
-        <!-- Uploaded Image -->
 
         <img
           *ngIf="course.image"
@@ -91,7 +75,6 @@
         />
 
 
-        <!-- FontAwesome Icon -->
 
         <i
           *ngIf="!course.image"
@@ -101,7 +84,6 @@
       </div>
 
 
-      <!-- Course Information -->
 
       <div class="course-info">
 
@@ -120,7 +102,6 @@
       </div>
 
 
-      <!-- Delete Single Course -->
 
       <button
         type="button"
@@ -136,9 +117,7 @@
     </div>
 
 
-    <!-- ========================================
-         Empty State
-         ======================================== -->
+
 
     <div
       class="empty-state"
@@ -161,9 +140,7 @@
 </main>
 
 
-<!-- ==========================================
-     DELETE CONFIRMATION MODAL
-     ========================================== -->
+
 
 <div
   class="modal-overlay"
@@ -177,7 +154,6 @@
     (click)="$event.stopPropagation()">
 
 
-    <!-- Warning Icon -->
 
     <div class="modal-icon">
 
@@ -186,14 +162,12 @@
     </div>
 
 
-    <!-- Title -->
 
     <h2>
       Are you sure?
     </h2>
 
 
-    <!-- Message -->
 
     <p>
       This action cannot be undone.
@@ -201,7 +175,6 @@
     </p>
 
 
-    <!-- Buttons -->
 
     <div class="modal-actions">
 

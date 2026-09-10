@@ -1,14 +1,12 @@
 <app-admin-sidebar></app-admin-sidebar>
 <div class="settings-wrapper">
-     
+
   <div class="settings-card">
-    
-    <!-- Title Section -->
+
     <div class="title-container">
       <h2 class="card-title">Profile Settings</h2>
     </div>
 
-    <!-- Avatar Section -->
     <div class="avatar-section">
       <div class="avatar-badge">
         {{ getInitials() }}
@@ -18,60 +16,54 @@
       </button>
     </div>
 
-    <!-- Form -->
     <form (ngSubmit)="onSave()" class="form-grid">
-      
-      <!-- First Name & Last Name Row -->
+
       <div class="form-row-2col">
         <div class="form-group">
           <label class="form-label">First Name</label>
-          <input 
-            type="text" 
-            [(ngModel)]="adminProfile.firstName" 
-            name="firstName" 
+          <input
+            type="text"
+            [(ngModel)]="adminProfile.firstName"
+            name="firstName"
             class="form-input" />
         </div>
         <div class="form-group">
           <label class="form-label">Last Name</label>
-          <input 
-            type="text" 
-            [(ngModel)]="adminProfile.lastName" 
-            name="lastName" 
+          <input
+            type="text"
+            [(ngModel)]="adminProfile.lastName"
+            name="lastName"
             class="form-input" />
         </div>
       </div>
 
-      <!-- UserName -->
       <div class="form-group">
         <label class="form-label">UserName</label>
-        <input 
-          type="text" 
-          [(ngModel)]="adminProfile.userName" 
-          name="userName" 
+        <input
+          type="text"
+          [(ngModel)]="adminProfile.userName"
+          name="userName"
           class="form-input" />
       </div>
 
-      <!-- Email -->
       <div class="form-group">
         <label class="form-label">Email</label>
-        <input 
-          type="email" 
-          [(ngModel)]="adminProfile.email" 
-          name="email" 
+        <input
+          type="email"
+          [(ngModel)]="adminProfile.email"
+          name="email"
           class="form-input" />
       </div>
 
-      <!-- Bio -->
       <div class="form-group">
         <label class="form-label">Bio</label>
-        <input 
-          type="text" 
-          [(ngModel)]="adminProfile.bio" 
-          name="bio" 
+        <input
+          type="text"
+          [(ngModel)]="adminProfile.bio"
+          name="bio"
           class="form-input form-input-sm" />
       </div>
 
-      <!-- Divider -->
       <hr class="divider" />
 
       <!-- Log Out Row
@@ -85,7 +77,6 @@
         </button>
       </div> -->
 
-      <!-- Action Buttons -->
       <div class="action-buttons">
         <button type="button" (click)="onCancel()" class="btn-cancel" routerLink="/admin/profile">
           Cancel

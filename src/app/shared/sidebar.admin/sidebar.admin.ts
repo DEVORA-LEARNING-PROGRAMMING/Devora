@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-// تعريف واجهة بيانات عنصر القائمة
 interface NavItem {
   label: string;
-  iconClass: string; // كلاسات FontAwesome للإيقونات
+  iconClass: string;
   route: string;
   isLogout?: boolean;
 }
@@ -21,7 +20,6 @@ export class SidebarComponent {
   brandName: string = 'Devora';
   brandIconLetter: string = 'D';
 
-  // مصفوفة الخيارات الديناميكية بناءً على كود HTML الخاص بك
   navItems: NavItem[] = [
     { label: 'Dashboard', iconClass: 'fa-solid fa-table-cells-large', route: '/admin/dashboard' },
     { label: 'Courses', iconClass: 'fa-solid fa-graduation-cap', route: '/admin/manage-courses' },

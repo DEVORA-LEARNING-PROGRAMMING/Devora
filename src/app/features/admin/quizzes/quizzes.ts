@@ -108,7 +108,6 @@ export class QuizzesComponent implements OnInit {
     const formValues = this.quizForm.value;
 
     if (this.selectedQuizId !== null) {
-      // Edit mode
       const index = this.quizzes.findIndex(q => q.id === this.selectedQuizId);
       if (index !== -1) {
         this.quizzes[index] = {

@@ -8,7 +8,6 @@ export const adminRoutes: Routes = [
         .then(m => m.DashboardComponent)
   },
 
-  // Admin Dashboard
   {
     path: 'dashboard',
     loadComponent: () =>
@@ -16,7 +15,6 @@ export const adminRoutes: Routes = [
         .then(m => m.DashboardComponent)
   },
 
-  // Add Course
   {
     path: 'add-course',
     loadComponent: () =>
@@ -24,7 +22,6 @@ export const adminRoutes: Routes = [
         .then(m => m.AddCourseComponent)
   },
 
-  // Delete Course
   {
     path: 'delete-course',
     loadComponent: () =>
@@ -32,7 +29,6 @@ export const adminRoutes: Routes = [
         .then(m => m.DeleteCoursesComponent)
   },
 
-  // Manage Courses
   {
     path: 'manage-courses',
     loadComponent: () =>
@@ -40,7 +36,6 @@ export const adminRoutes: Routes = [
         .then(m => m.ManageCoursesComponent)
   },
 
-  // Quizzes
   {
     path: 'quizes',
     loadComponent: () =>
@@ -48,7 +43,6 @@ export const adminRoutes: Routes = [
         .then(m => m.QuizzesComponent)
   },
 
-  // Student Management
   {
     path: 'student-management',
     loadComponent: () =>

@@ -25,7 +25,6 @@
       </button>
     </div>
 
-    <!-- Quizzes Grid -->
     <div class="quizzes-grid">
       <div class="quiz-card" *ngFor="let quiz of quizzes">
         <div class="quiz-card-header">
@@ -80,7 +79,6 @@
   </main>
 </div>
 
-<!-- Delete Modal -->
 <div class="modal-overlay" [class.active]="isDeleteModalOpen">
   <div class="modal-box">
     <div class="modal-icon">
@@ -97,7 +95,6 @@
   </div>
 </div>
 
-<!-- Quiz Modal (Add / Edit) -->
 <div class="modal-overlay" [class.active]="isQuizModalOpen">
   <div class="modal-box modal-form">
     <h3>{{ modalTitle }}</h3>

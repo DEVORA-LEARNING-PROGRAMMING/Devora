@@ -20,7 +20,6 @@
 }
 
 
-/* Result Icon */
 
 .result-icon {
     width: 68px;
@@ -55,7 +54,6 @@
 }
 
 
-/* Title */
 
 h1 {
     font-size: 35px;
@@ -72,7 +70,6 @@ h1 {
 }
 
 
-/* Stats */
 
 .stats {
     width: 880px;
@@ -199,7 +196,6 @@ h1 {
 }
 
 
-/* Status */
 
 .status {
     min-width: 67px;
@@ -230,7 +226,6 @@ h1 {
 }
 
 
-/* Buttons */
 
 .buttons {
     display: flex;

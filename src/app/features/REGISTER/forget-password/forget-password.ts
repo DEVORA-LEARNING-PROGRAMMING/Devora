@@ -34,7 +34,6 @@ export class ForgetPasswordComponent {
       return;
     }
 
-    // Mock only - no API
     this.router.navigate(['/register/verify-code']);
   }
 }

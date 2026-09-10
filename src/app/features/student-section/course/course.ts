@@ -6,9 +6,7 @@ import { SidebarComponent } from '../../../shared/sidebar/sidebar';
 import { SearchHeader } from '../../../shared/search.header/search.header';
 
 
-// ==========================================
-// 1. Interface
-// ==========================================
+
 export interface Course {
   id: number;
   title: string;
@@ -23,9 +21,7 @@ export interface Course {
   price: 'Free' | 'Paid';
 }
 
-// ==========================================
-// 2. Component
-// ==========================================
+
 @Component({
   selector: 'app-courses',
   standalone: true,
@@ -153,7 +149,6 @@ export class CoursesComponent {
     'Git & GitHub'
   ];
 
-  // Current Filters
   searchTerm: string = '';
   selectedCategory: string = 'All';
   selectedLevel: string = 'All';
@@ -163,7 +158,6 @@ export class CoursesComponent {
 
   constructor(private router: Router) {}
 
-  // Filtered courses getter
   get filteredCourses(): Course[] {
     const search = this.searchTerm.toLowerCase().trim();
 
@@ -180,7 +174,6 @@ export class CoursesComponent {
     });
   }
 
-  // Autocomplete Suggestions
   get autocompleteSuggestions(): Course[] {
     const search = this.searchTerm.toLowerCase().trim();
     if (!search) return [];
@@ -208,7 +201,7 @@ export class CoursesComponent {
   }
 
   enrollCourse(event: Event, courseId: number): void {
-    event.stopPropagation(); // منع الانتقال لصفحة الـ Lesson عند الضغط على زر Enroll
+    event.stopPropagation();
     console.log(`Enrolling in course ID: ${courseId}`);
   }
 }

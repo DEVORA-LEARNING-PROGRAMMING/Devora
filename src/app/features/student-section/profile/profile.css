@@ -18,9 +18,7 @@
 }
 
 
-/* =========================
-   PAGE LAYOUT
-========================= */
+
 
 .page-layout {
   display: flex;
@@ -34,9 +32,7 @@
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+
 
 .page-content {
   flex: 1;
@@ -46,9 +42,7 @@
 }
 
 
-/* =========================
-   HEADER
-========================= */
+
 
 .page-header {
   height: 150px;
@@ -101,18 +95,13 @@
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+
 
 .profile-content {
   padding: 36px 32px 60px;
 }
 
 
-/* =========================
-   PROFILE HEADER
-========================= */
 
 .profile-header {
   width: 100%;
@@ -134,8 +123,6 @@
   margin-bottom: 32px;
 }
 
-
-/* Avatar */
 
 .avatar {
   border-radius: 50%;
@@ -160,7 +147,6 @@
 }
 
 
-/* Profile Info */
 
 .profile-header__info {
   flex: 1;
@@ -193,7 +179,6 @@
 }
 
 
-/* Edit Button */
 
 .edit-btn {
   min-width: 150px;
@@ -226,9 +211,6 @@
 }
 
 
-/* =========================
-   STATISTICS
-========================= */
 
 .stats-grid {
   display: grid;
@@ -270,9 +252,7 @@
 }
 
 
-/* =========================
-   ACHIEVEMENTS TITLE
-========================= */
+
 
 .achievements-title {
   margin: 0 0 20px 32px;
@@ -282,9 +262,6 @@
 }
 
 
-/* =========================
-   ACHIEVEMENTS CONTAINER
-========================= */
 
 .achievements-container {
   background: #ffffff;
@@ -298,9 +275,6 @@
 }
 
 
-/* =========================
-   ACHIEVEMENT ROW
-========================= */
 
 .achievement-row {
   min-height: 98px;
@@ -323,9 +297,7 @@
 }
 
 
-/* =========================
-   ACHIEVEMENT ICON
-========================= */
+
 
 .achievement-icon {
   width: 68px;
@@ -349,10 +321,6 @@
 }
 
 
-/* =========================
-   ACHIEVEMENT INFO
-========================= */
-
 .achievement-info {
   flex: 1;
 }
@@ -373,9 +341,6 @@
 }
 
 
-/* =========================
-   VIEW BUTTON
-========================= */
 
 .view-btn {
   width: 132px;
@@ -400,9 +365,6 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1000px) {
 

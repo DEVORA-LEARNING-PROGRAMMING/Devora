@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+
 
 * {
   box-sizing: border-box;
@@ -10,9 +8,7 @@
 }
 
 
-/* =========================
-   PAGE LAYOUT
-========================= */
+
 
 .achievement-page {
   min-height: 100vh;
@@ -24,9 +20,6 @@
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
 
 .main-content {
   flex: 1;
@@ -40,9 +33,6 @@
 }
 
 
-/* =========================
-   HEADER
-========================= */
 
 .page-header {
   width: 100%;
@@ -70,9 +60,7 @@
 }
 
 
-/* =========================
-   HEADER RIGHT
-========================= */
+
 
 .header-right {
   display: flex;
@@ -110,9 +98,7 @@
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+
 
 .achievements-content {
   width: 100%;
@@ -125,10 +111,6 @@
   gap: 20px;
 }
 
-
-/* =========================
-   ACHIEVEMENT CARD
-========================= */
 
 .achievement-card {
   width: 100%;
@@ -151,9 +133,7 @@
 }
 
 
-/* =========================
-   ICON
-========================= */
+
 
 .achievement-icon {
   width: 50px;
@@ -172,7 +152,6 @@
 }
 
 
-/* HTML */
 
 .html-icon {
   background-color: #fff0eb;
@@ -180,7 +159,6 @@
 }
 
 
-/* CSS */
 
 .css-icon {
   background-color: #eaf3ff;
@@ -188,7 +166,6 @@
 }
 
 
-/* JavaScript */
 
 .js-icon {
   background-color: #fff9d8;
@@ -196,7 +173,6 @@
 }
 
 
-/* C++ */
 
 .cpp-icon {
   background-color: #eaf2ff;
@@ -204,7 +180,6 @@
 }
 
 
-/* React */
 
 .react-icon {
   background-color: #e8f9ff;
@@ -212,7 +187,6 @@
 }
 
 
-/* Python */
 
 .python-icon {
   background-color: #eef5ff;
@@ -220,9 +194,6 @@
 }
 
 
-/* =========================
-   COURSE INFO
-========================= */
 
 .achievement-info {
   margin-left: 13px;
@@ -256,9 +227,6 @@
 }
 
 
-/* =========================
-   VIEW BUTTON
-========================= */
 
 .view-btn {
   margin-left: auto;
@@ -293,18 +261,7 @@
 }
 
 
-/* =========================
-   JAVASCRIPT SELECTED CARD
-========================= */
 
-/* .achievement-card:nth-child(3) {
-  border-color: #1598f5;
-} */
-
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 900px) {
 
@@ -321,9 +278,6 @@
 }
 
 
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 600px) {
 

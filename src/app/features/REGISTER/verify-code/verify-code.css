@@ -1,4 +1,3 @@
-/* Devora Auth — component styles (Google Fonts loaded globally via index.html) */
 
 :host {
   display: block;
@@ -48,7 +47,6 @@ button {
   outline-offset: 2px;
 }
 
-/* ---------- layout shell ---------- */
 
 .auth-shell {
   min-height: 100vh;
@@ -57,7 +55,6 @@ button {
   color: var(--ink);
 }
 
-/* ---------- left illustration panel ---------- */
 
 .auth-panel {
   flex: 0 0 42%;
@@ -97,7 +94,6 @@ button {
   align-self: center;
 }
 
-/* ---------- right form column ---------- */
 
 .auth-main {
   flex: 1;
@@ -175,7 +171,6 @@ button {
   font-size: 15px;
 }
 
-/* ---------- form area ---------- */
 
 .auth-form-wrap {
   flex: 1;
@@ -373,7 +368,6 @@ button.link-inline:disabled {
   transform: translateY(1px);
 }
 
-/* ---------- inline status banner (mock submit feedback) ---------- */
 
 .form-banner {
   display: none;
@@ -398,7 +392,6 @@ button.link-inline:disabled {
   margin-top: 1px;
 }
 
-/* ---------- compact brand mark shown only when the panel is hidden ---------- */
 
 .mobile-brand {
   display: none;
@@ -414,7 +407,6 @@ button.link-inline:disabled {
   color: var(--blue);
 }
 
-/* ---------- responsive ---------- */
 
 @media (max-width: 980px) {
   .auth-panel {

@@ -8,9 +8,6 @@
   background: #eef3ff;
 }
 
-/* =========================
-   Main
-========================= */
 
 .dashboard-main {
   flex: 1;
@@ -21,9 +18,7 @@
   padding: 30px 40px 50px;
 }
 
-/* =========================
-   Welcome
-========================= */
+
 
 .welcome {
   margin-bottom: 30px;
@@ -42,9 +37,6 @@
   color: #617096;
 }
 
-/* =========================
-   Stats
-========================= */
 
 .stats {
   display: grid;
@@ -106,9 +98,6 @@
   color: #53658e;
 }
 
-/* =========================
-   Courses
-========================= */
 
 .courses-section {
   margin-bottom: 28px;
@@ -223,9 +212,6 @@
   background: #bceebd;
 }
 
-/* =========================
-   Bottom
-========================= */
 
 .bottom-section {
   display: grid;
@@ -252,9 +238,7 @@
   cursor: pointer;
 }
 
-/* =========================
-   Quizzes
-========================= */
+
 
 .quiz-card {
   background: #fff;
@@ -299,10 +283,6 @@
   font-size: 15px;
   cursor: pointer;
 }
-
-/* =========================
-   Activity
-========================= */
 
 .activity-card {
   height: 225px;
@@ -349,9 +329,7 @@
   color: #101936;
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1000px) {
   .stats {

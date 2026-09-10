@@ -1,6 +1,5 @@
 <div class="result-page">
 
-  <!-- Result Icon -->
   <div
     class="result-icon"
     [class.passed]="result?.passed"
@@ -13,13 +12,11 @@
   </div>
 
 
-  <!-- Title -->
   <h1>
     {{ result?.passed ? 'Nice work !' : 'Keep practicing !' }}
   </h1>
 
 
-  <!-- Subtitle -->
   <p class="subtitle">
 
     @if (result?.passed) {
@@ -32,7 +29,6 @@
   </p>
 
 
-  <!-- Statistics -->
   <div class="stats">
 
     <div class="stat-card">
@@ -76,7 +72,6 @@
   </div>
 
 
-  <!-- Questions Result -->
   <div class="questions-result">
 
     @for (q of questions; track q.id; let i = $index) {

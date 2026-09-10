@@ -29,7 +29,6 @@ export class SigninComponent {
 
   private emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Mock accounts — remove this once backend auth is ready
   private mockAccounts = [
     { email: 'student@gmail.com', password: '123456', role: 'student', redirect: '/student/dashboard' },
     { email: 'admin@gmail.com', password: '123456', role: 'admin', redirect: '/admin/dashboard' }

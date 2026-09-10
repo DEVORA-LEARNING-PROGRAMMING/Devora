@@ -74,7 +74,6 @@ export class SignupComponent {
       return;
     }
 
-    // Mock only - no API
     this.router.navigate(['/signin'], {
       queryParams: { created: 1 }
     });
